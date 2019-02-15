@@ -1,5 +1,7 @@
 /**
- * Created by Teacher on 1/7/2019.
+ * Card.java
+ *
+ * <code>Card</code> represents a playing card.
  */
 public class Card {
 
@@ -30,7 +32,10 @@ public class Card {
      *                  containing the point value of the card
      */
     public Card(String cardRank, String cardSuit, int cardPointValue) {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+        this.rank=cardRank;
+        this.suit=cardSuit;
+        this.pointValue=cardPointValue;
+
     }
 
 
@@ -39,7 +44,7 @@ public class Card {
      * @return this <code>Card's</code> suit.
      */
     public String suit() {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+        return this.suit;
 
     }
 
@@ -48,7 +53,7 @@ public class Card {
      * @return this <code>Card's</code> rank.
      */
     public String rank() {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+        return this.rank;
 
     }
 
@@ -57,7 +62,7 @@ public class Card {
      * @return this <code>Card's</code> point value.
      */
     public int pointValue() {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+        return this.pointValue;
 
     }
 
@@ -68,7 +73,11 @@ public class Card {
      *         false otherwise.
      */
     public boolean matches(Card otherCard) {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+        if(otherCard.pointValue!=this.pointValue || otherCard.rank.compareTo(this.rank)!=0 || otherCard.suit.compareTo(this.suit)!=0 ){
+            return false;
+        } else{
+            return true;
+        }
 
     }
 
@@ -83,9 +92,10 @@ public class Card {
      *         and point value of the card.
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
+        return "[" + this.rank + "]" + "of" + "[" + this.suit + "]" + "(Point Value = [" + this.pointValue + "])";
         /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
 
     }
 }
-
